@@ -32,7 +32,7 @@ A personal budget tracking Android app built with Kotlin and RoomDB for OPSC6311
 
 ## Demo Video
 
-[https://youtu.be/CNW6uB3mwOM]
+[Watch Demo Video](https://youtu.be/CNW6uB3mwOM)
 
 ## Student Info
 - **Name:** Mahlatse
