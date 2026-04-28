@@ -22,7 +22,7 @@ import java.util.Date
 import java.util.Locale
 
 class AddEntryActivity : AppCompatActivity() {
-
+//This is where you can add expense entries
     private lateinit var binding: ActivityAddEntryBinding
     private var userId: Int = -1
     private var photoPath: String? = null
