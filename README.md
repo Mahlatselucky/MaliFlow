@@ -140,7 +140,7 @@ This repository uses GitHub Actions to automatically build the project and run u
 
 A full walkthrough of the app, including all required and custom features, is available here:
 
-**[Demo Video Link - YouTube (unlisted)]** *(add link here)*
+**[Demo Video Link - YouTube (*****)]
 
 ---
 
