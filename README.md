@@ -4,7 +4,7 @@
 
 Mali Flow is a personal budget tracker app built for Android. "Mali" is the Zulu and Xhosa word for money, and the app was designed to make budgeting feel less stressful and more engaging through clear visuals and gamification.
 
-This repository contains the final submission for the OPSC6311 Open-Source Coding module Portfolio of Evidence (POE).
+This repository contains the final submission for the OPSC6311 Open-Source Coding module Portfolio of Evidence.
 
 ---
 
