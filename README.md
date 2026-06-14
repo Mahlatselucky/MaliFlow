@@ -88,15 +88,15 @@ For example, if a category has a R500 monthly limit and only R300 was spent last
 
 | Login | Dashboard |
 |---|---|
-| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) |
+| ![Login](Screenshots/Login.png) | ![Dashboard](Screenshots/dashboard(1).png) |
 
 | Spending Graphs (Daily) | Spending Graphs (Category) |
 |---|---|
-| ![Bar Chart](screenshots/graphs_bar.png) | ![Pie Chart](screenshots/graphs_pie.png) |
+| ![Bar Chart](Screenshots/Barchart.png) | ![Pie Chart](Screenshots/piechart.png) |
 
-| Rewards |
-|---|
-| ![Rewards](screenshots/rewards.png) |
+| Dashboard (Full) | Rewards |
+|---|---|
+| ![Dashboard Full](Screenshots/Dashboard(2).png) | ![Rewards](Screenshots/Rewards.png) |
 
 
 ## Tech Stack
