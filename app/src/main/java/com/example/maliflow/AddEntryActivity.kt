@@ -22,7 +22,7 @@ import java.util.Date
 import java.util.Locale
 
 class AddEntryActivity : AppCompatActivity() {
-//This is where you can add expense entries
+//Entries for expenses
     private lateinit var binding: ActivityAddEntryBinding
     private var userId: Int = -1
     private var photoPath: String? = null
@@ -128,9 +128,11 @@ class AddEntryActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             db.expenseEntryDao().insert(entry)
+            GamificationHelper.onExpenseLogged(db, userId)
             runOnUiThread {
-                Toast.makeText(this@AddEntryActivity, "Entry saved!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@AddEntryActivity, "Entry saved! +10 Flow Points", Toast.LENGTH_SHORT).show()
                 finish()
+
             }
         }
     }

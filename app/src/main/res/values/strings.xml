@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Mali Flow</string>
     <string name="delete_category">Delete Category</string>
+    <string name="edit_limit">Edit limit</string>
+    <string name="rollover_description">Rollover unused budget to next month</string>
 </resources>

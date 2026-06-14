@@ -1,6 +1,8 @@
 package com.example.maliflow
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -11,10 +13,9 @@ import com.example.maliflow.databinding.ActivityCategoryBinding
 import kotlinx.coroutines.launch
 
 class CategoryActivity : AppCompatActivity() {
-
+    // This handles the categories used for organising expenses
     private lateinit var binding: ActivityCategoryBinding
     private var userId: Int = -1
-    private val categories = mutableListOf<Category>()
     private lateinit var adapter: CategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,19 +26,28 @@ class CategoryActivity : AppCompatActivity() {
         userId = intent.getIntExtra("USER_ID", -1)
         val db = AppDatabase.getDatabase(this)
 
-        adapter = CategoryAdapter(categories) { category ->
-            lifecycleScope.launch {
-                db.categoryDao().delete(category)
+        adapter = CategoryAdapter(
+            onDelete = { category ->
+                lifecycleScope.launch {
+                    db.categoryDao().delete(category)
+                }
+            },
+            onEditLimit = { category ->
+                showEditLimitDialog(category, db)
+            },
+            onRolloverToggle = { category, isChecked ->
+                lifecycleScope.launch {
+                    db.categoryDao().update(category.copy(rolloverEnabled = isChecked))
+                }
             }
-        }
+        )
 
         binding.rvCategories.layoutManager = LinearLayoutManager(this)
         binding.rvCategories.adapter = adapter
 
+        // Observe categories and update the adapter using submitList
         db.categoryDao().getCategoriesByUser(userId).observe(this) { list ->
-            categories.clear()
-            categories.addAll(list)
-            adapter.notifyDataSetChanged()
+            adapter.submitList(list)
         }
 
         binding.btnAddCategory.setOnClickListener {
@@ -53,5 +63,30 @@ class CategoryActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    // Shows a small dialog letting the user set or update a category's monthly budget limit
+    private fun showEditLimitDialog(category: Category, db: AppDatabase) {
+        val input = EditText(this).apply {
+            inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL
+            hint = "e.g. 500"
+            if (category.budgetLimit > 0.0) {
+                setText(category.budgetLimit.toString())
+            }
+        }
+
+        AlertDialog.Builder(this)
+            .setTitle("Set monthly limit for ${category.name}")
+            .setView(input)
+            .setPositiveButton("Save") { _, _ ->
+                val limitText = input.text.toString().trim()
+                val limit = limitText.toDoubleOrNull() ?: 0.0
+
+                lifecycleScope.launch {
+                    db.categoryDao().update(category.copy(budgetLimit = limit))
+                }
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 }

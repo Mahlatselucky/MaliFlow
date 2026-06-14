@@ -11,4 +11,7 @@ interface GoalDao {
 
     @Query("SELECT * FROM goals WHERE userId = :userId AND month = :month LIMIT 1")
     fun getGoalByMonth(userId: Int, month: String): LiveData<Goal?>
+
+    @Query("SELECT * FROM goals WHERE userId = :userId AND month = :month LIMIT 1")
+    suspend fun getGoalByMonthSync(userId: Int, month: String): Goal?
 }

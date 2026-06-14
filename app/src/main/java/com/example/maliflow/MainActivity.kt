@@ -6,19 +6,22 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.maliflow.data.database.AppDatabase
+import com.example.maliflow.data.database.MaliFlowApplication
 import com.example.maliflow.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-//The base of the app
+    //The base of the app
+    private val db: AppDatabase by lazy {
+        (application as MaliFlowApplication).database
+    }
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val db = AppDatabase.getDatabase(this)
 
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()

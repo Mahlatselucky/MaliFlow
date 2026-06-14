@@ -8,7 +8,7 @@ import com.example.maliflow.data.database.AppDatabase
 import com.example.maliflow.databinding.ActivityViewEntriesBinding
 
 class ViewEntriesActivity : AppCompatActivity() {
-//Code for viewing the expenses the user created and  logged in
+    //Code for viewing the expenses the user created and  logged in
     private lateinit var binding: ActivityViewEntriesBinding
     private var userId: Int = -1
     private lateinit var adapter: EntryAdapter
