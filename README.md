@@ -84,16 +84,20 @@ For example, if a category has a R500 monthly limit and only R300 was spent last
 **Where to find it:** Categories screen (toggle switch on each category), reflected in the Category Progress section on the Home screen.
 
 ---
-
 ## Screenshots
 
-*(Add screenshots here - Login, Home/Dashboard, Categories, Add Expense, Graphs, Rewards)*
+| Login | Dashboard |
+|---|---|
+| ![Login](screenshots/login.png) | ![Dashboard](screenshots/dashboard.png) |
 
-| Login | Dashboard | Graphs | Rewards |
-|---|---|---|---|
-| _placeholder_ | _placeholder_ | _placeholder_ | _placeholder_ |
+| Spending Graphs (Daily) | Spending Graphs (Category) |
+|---|---|
+| ![Bar Chart](screenshots/graphs_bar.png) | ![Pie Chart](screenshots/graphs_pie.png) |
 
----
+| Rewards |
+|---|
+| ![Rewards](screenshots/rewards.png) |
+
 
 ## Tech Stack
 
