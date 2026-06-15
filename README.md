@@ -104,7 +104,7 @@ For example, if a category has a R500 monthly limit and only R300 was spent last
 - **Language:** Kotlin
 - **Database:** Room (SQLite)
 - **UI:** ViewBinding, Material Components, CardView
-- **Charts:** [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
+- **Charts:** [MPAndroidChart](https://youtube.com/shorts/kt06D_R4vwo)
 - **Architecture:** LiveData, Coroutines, lifecycleScope
 - **Build:** Gradle (Kotlin DSL)
 - **CI/CD:** GitHub Actions
