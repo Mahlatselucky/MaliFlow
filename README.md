@@ -144,7 +144,7 @@ This repository uses GitHub Actions to automatically build the project and run u
 
 A full walkthrough of the app, including all required and custom features, is available here:
 
-**[Demo Video Link - YouTube (*****)]
+**[Demo Video Link - YouTube [(https://youtu.be/UyiJtOXwgJY)]
 
 ---
 
