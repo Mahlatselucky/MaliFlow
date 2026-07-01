@@ -136,8 +136,7 @@ No additional configuration or API keys are required - all data is stored locall
 
 This repository uses GitHub Actions to automatically build the project and run unit tests on every push. The workflow configuration can be found in `.github/workflows/`.
 
-*(Add details here once the workflow is finalised - e.g. workflow name, what it checks, build status badge)*
-
+This project uses GitHub Actions for continuous integration. On every push to the main branch, the workflow automatically compiles the app and runs unit tests to ensure code quality and stability
 ---
 
 ## Demo Video
